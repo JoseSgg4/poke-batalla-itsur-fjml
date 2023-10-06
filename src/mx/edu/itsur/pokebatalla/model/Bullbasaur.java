@@ -4,9 +4,11 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author FJML1983
+ * @author Jose Guadalupe Salgado Garcia
  */
 public class Bullbasaur extends Pokemon {
 
@@ -17,14 +19,24 @@ public class Bullbasaur extends Pokemon {
         defensa = 49;
         nivel = 1;
         precision = 4;
+        this.habilidades = new ArrayList<>();
+        this.habilidades.add("DOBLEFILO");
+        this.habilidades.add("BOMBAGERMEN");
     }
 
-    //Constructor alterno 1
     public Bullbasaur(String nombre){
-        this(); //invocando al constructor default
+        this(); 
         this.nombre = nombre;
     }
+    public void atacar(Pokemon oponente, String habilidad){
+        if(habilidad.equals("DOBLEFILO")){
+         
+            System.out.println("Realizando DOBLEFILO");
+        }else if(habilidad.equals("BOMBAGERMEN")){
+
+            System.out.println("Realizando BOMBAGERMEN");            
+        }
     
-    
-    
+    }
 }
+
