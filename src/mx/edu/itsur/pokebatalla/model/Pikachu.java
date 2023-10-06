@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author FJML1983
+ * @author Jose Guadalupe Salgado Garcia
  */
 public class Pikachu  extends Pokemon{
 
@@ -35,12 +35,13 @@ public class Pikachu  extends Pokemon{
     public void atacar(Pokemon oponente, String habilidad){
         if(habilidad.equals("ATACKTRUENO")){
             //Logica del daño por atacktrueno
-            System.out.println("Realizando ATACKTRUENO");
+            System.out.println("Ataque Realizando ATACKTRUENO");
         }else if(habilidad.equals("BOLAVOLTIO")){
             //Logica del daño por BOLAVOLTIO
-            System.out.println("Realizando BOLAVOLTIO");            
+            System.out.println("Ataque Realizando BOLAVOLTIO");            
         }
         //TODO: otras habilidades...
     }
+
    
 }
