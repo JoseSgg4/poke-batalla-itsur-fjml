@@ -4,9 +4,11 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author FJML1983
+ * @author Jose Guadalupe Salgado Garcia
  */
 public class Charmander extends Pokemon {
     public Charmander(){
@@ -16,12 +18,24 @@ public class Charmander extends Pokemon {
         defensa = 43;
         nivel = 1;
         precision = 4;
+        this.habilidades = new ArrayList<>();
+        this.habilidades.add("INFERNO");
+        this.habilidades.add("ENVITEIGNEO");
     }
-    
-    //Constructor alterno 1
-    public Charmander(String nombre){
-        this(); //invocando al constructor default
+
+    public Charmander (String nombre){
+        this(); 
         this.nombre = nombre;
     }
+    public void atacar(Pokemon oponente, String habilidad){
+        if(habilidad.equals("INFERNO")){
+         
+            System.out.println("Realizando INFERNO");
+        }else if(habilidad.equals("ENVITEIGNEO")){
+
+            System.out.println("Realizando ENVITEIGNEO");            
+        }
     
+    }
+
 }
