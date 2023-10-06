@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author FJML1983
+ * @author Jose Guadalupe Salgado Garcia
  */
 public class Pokemon {
 
@@ -32,7 +32,8 @@ public class Pokemon {
 
     //Métodos
     public void atacar(Pokemon oponente) {
-        
+        System.out.println("-----------------------------------------");
+        System.out.println("Batalla 1");
         System.out.println("Mi pokemon:" + this.nombre);
         System.out.println("esta atacando a: " + oponente);
         
@@ -43,6 +44,7 @@ public class Pokemon {
             oponente.hp = oponente.hp - damage;
             System.out.println("Y le causo un daño de: " + damage);
         }else{
+            
            //TODO: ...Y si no que pasa?
         }
         System.out.println("El pokemon oponente quedo asi:" + oponente);
@@ -53,12 +55,48 @@ public class Pokemon {
         //TODO: Aqui va la logica para causar daño al enemigo.
 
     }
+    
 
-    @Override
-    public String toString() {
-
-        return this.getClass().getName() + 
-                "{tipo:" + tipo + " hp:" + hp + "}";
+@Override
+public String toString() {
+    return "Al pokemon {" + nombre + ", tipo:" + tipo + ", hp:" + hp + "}";
+}
+    public void atacar1(Pokemon oponente1){
+        System.out.println("-----------------------------------------");
+        System.out.println("Batalla 2");
+        System.out.println("Mi pokemon:" + this.nombre);
+        System.out.println("esta atacando a: " + oponente1);
+        
+        if (this.ataque > oponente1.defensa) {
+            //Calcular el daño
+            int damage = this.ataque - oponente1.defensa;
+            //Restar el daño del HP del oponente
+            oponente1.hp = oponente1.hp - damage;
+            System.out.println("Y le causo un daño de: " + damage);
+        }else{
+            
+           //TODO: ...Y si no que pasa?
+        }
+        System.out.println("El pokemon oponente quedo asi:" + oponente1);
     }
 
+    public void atacar2(Pokemon oponente2){
+        System.out.println("-----------------------------------------");
+        System.out.println("Batalla 3");
+        System.out.println("Mi pokemon:" + this.nombre);
+        System.out.println("esta atacando a: " + oponente2);
+        
+        if (this.ataque > oponente2.defensa) {
+            //Calcular el daño
+            int damage = this.ataque - oponente2.defensa;
+            //Restar el daño del HP del oponente
+            oponente2.hp = oponente2.hp - damage;
+            System.out.println("Y le causo un daño de: " + damage);
+        }else{
+            
+           //TODO: ...Y si no que pasa?
+        }
+        System.out.println("El pokemon oponente quedo asi:" + oponente2);
+        
+    }
 }
