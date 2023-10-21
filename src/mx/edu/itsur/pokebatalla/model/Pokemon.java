@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemons;
 
 import java.util.List;
 
@@ -21,16 +17,40 @@ public class Pokemon {
     protected int defensa;
     protected double precision;
     protected List<String> habilidades;
-
+    
+    
     Pokemon() {
     }
-
+    
+    //Getters
+    public int getNivel() {
+        return nivel;
+    }
+    public int getAtaque() {
+        return ataque;
+    }    
+    public int getDefensa(){
+        return defensa;
+    }
+    
+    
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    
     //Métodos
+    public void recibirDanio(int danio){
+        this.hp = this.hp - danio;
+    } 
+    
+        @Override
+    public String toString() {
+
+        return this.getClass().getSimpleName() + "{tipo:" + tipo + " hp:" + hp + "}";
+    }
+
     public void atacar(Pokemon oponente) {
         System.out.println("-----------------------------------------");
         System.out.println("Batalla 1");
@@ -57,10 +77,7 @@ public class Pokemon {
     }
     
 
-@Override
-public String toString() {
-    return "Al pokemon {" + nombre + ", tipo:" + tipo + ", hp:" + hp + "}";
-}
+
     public void atacar1(Pokemon oponente1){
         System.out.println("-----------------------------------------");
         System.out.println("Batalla 2");
