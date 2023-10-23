@@ -1,26 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package mx.edu.itsur.pokebatalla;
 
-import mx.edu.itsur.pokebatalla.model.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.Pikachu;
-import mx.edu.itsur.pokebatalla.model.Articuno;
-import mx.edu.itsur.pokebatalla.model.Charmander;
-import mx.edu.itsur.pokebatalla.model.Moltres;
-import mx.edu.itsur.pokebatalla.model.Zapdos;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Bullbasaur;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Articuno;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Moltres;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Zapdos;
 /**
  *
  * @author Jose Guadalupe Salgado Garcia
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         System.out.println("Hello PokeBatalla!");
         
         Pikachu pikachuSalvaje = new Pikachu();
@@ -40,13 +33,53 @@ public class Main {
         Articuno miArticuno = articunoSalvaje;
         Moltres miMoltres = moltresSalvaje;
         
-        miPikachu.atacar(charmanderSalvaje);
-        miPikachu.atacar(charmanderSalvaje, "ATACKTRUENO");
+        System.out.println("->Pikachu se encuentra con un Charmander y ataca");
+        pikachuSalvaje.atacar(charmanderSalvaje, Pikachu.Movimientos.IMPACTRUENO);
         
-        miArticuno.atacar1(zapdosSalvaje);
-        miArticuno.atacar(zapdosSalvaje, "RAYOHIELO");
+        System.out.println("->Charmander se molesta y responde ");
+        charmanderSalvaje.atacar(pikachuSalvaje, Charmander.Movimientos.ATAQUE_RAPIDO);
+     
+        System.out.println("->Bullbasaur se enoja porque atacaron a su amigo Pikachu y...");
+        bullbasaurSalvaje.atacar(charmanderSalvaje, Bullbasaur.Movimientos.LATIGO);
         
-        miMoltres.atacar2(articunoSalvaje);
-        miMoltres.atacar(articunoSalvaje, "ATAQUEAEREO");
+        System.out.println("");
+        System.out.println("Nueva Batalla Pokemon! --------------------------------");
+        System.out.println("");
+        
+        
+        System.out.println("Aperecio un Moltres salvaje!");
+        System.out.println("Adelante, Articuno!");
+        System.out.println("");
+        articunoSalvaje.atacar(moltresSalvaje, Articuno.Movimientos.RAYO_HIELO);
+        System.out.println("");
+        moltresSalvaje.atacar(articunoSalvaje, Moltres.Movimientos.PICOTAZO);
+        System.out.println("");
+        articunoSalvaje.atacar(moltresSalvaje, Articuno.Movimientos.ATAQUE_AEREO);
+        System.out.println("");
+        moltresSalvaje.atacar(articunoSalvaje, Moltres.Movimientos.GIRO_FUEGO);
+        System.out.println("");
+        articunoSalvaje.atacar(moltresSalvaje, Articuno.Movimientos.SUSTITUTO);
+        System.out.println("");
+        System.out.println("Moltres se va del combate!");
+
+        System.out.println("");
+        System.out.println("Nueva Batalla Pokemon! --------------------------------");
+        System.out.println("");
+        
+        
+        System.out.println("Aperecio un Bullbasaur salvaje!");
+        System.out.println("Adelante, Articuno!");
+        System.out.println("");
+        articunoSalvaje.atacar(bullbasaurSalvaje, Articuno.Movimientos.RAYO_HIELO);
+        System.out.println("");
+        bullbasaurSalvaje.atacar(articunoSalvaje, Bullbasaur.Movimientos.ATAQUE_RAPIDO);
+        System.out.println("");
+        articunoSalvaje.atacar(bullbasaurSalvaje, Articuno.Movimientos.ATAQUE_AEREO);
+        System.out.println("");
+        bullbasaurSalvaje.atacar(articunoSalvaje, Bullbasaur.Movimientos.ATAQUE_RAPIDO);
+        System.out.println("");
+        articunoSalvaje.atacar(bullbasaurSalvaje, Articuno.Movimientos.ATAQUE_AEREO);
+        System.out.println("");
+        System.out.println("Bullbasaur se va del combate!");
     }
 }
