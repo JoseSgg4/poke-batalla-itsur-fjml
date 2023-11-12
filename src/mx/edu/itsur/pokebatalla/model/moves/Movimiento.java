@@ -4,10 +4,9 @@ import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
  *
  * @author Jose Guadalupe Salgado Garcia
  */
-public class Movimiento {
+public abstract class Movimiento {
 
     enum TiposDeMovimiento {
-        //Primera Generación
         AGUA,
         BICHO,
         DRAGON,
@@ -33,27 +32,8 @@ public class Movimiento {
     protected int puntosPoder;
 
     
-    public void utilizar(Pokemon usuario, Pokemon objetivo) {
+    public abstract void utilizar(Pokemon usuario, Pokemon objectivo);
         
-        int nivelAtacante = usuario.getNivel();
-        int ataqueAtacante = usuario.getAtaque();
-        int poderMovimiento = this.potencia; 
-        int defensaObjetivo = objetivo.getDefensa();
-        
-        
-        double modificador = 1.0;        
-        
-        
-        int danio = (int) (((((2 * nivelAtacante / 5 + 2) * ataqueAtacante * poderMovimiento / defensaObjetivo) / 50) + 2) * modificador);
-        objetivo.recibirDanio(danio); 
-        
-
-        System.out.println(
-                         usuario.getClass().getSimpleName() + " uso " + 
-                         this.getClass().getSimpleName() + "! a " +  
-                         objetivo.getClass().getSimpleName() + " y le causa danio de " +
-                         danio);
-        System.out.println("El pokemon quedo asi: " + objetivo);
-        
-    }    
+    
 }
+

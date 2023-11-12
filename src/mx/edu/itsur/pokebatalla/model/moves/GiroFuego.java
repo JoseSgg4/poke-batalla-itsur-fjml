@@ -11,7 +11,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
 public class GiroFuego extends MovimientoEspecial{
     public GiroFuego() {
         this.tipo=TiposDeMovimiento.FUEGO;
-        this.potencia = 35;
+        this.potencia = 95;
         this.precision = 85;
         this.puntosPoder = 15;
     }
