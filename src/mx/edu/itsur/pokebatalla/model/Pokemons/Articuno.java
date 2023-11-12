@@ -1,10 +1,10 @@
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
-import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueAereo;
 import mx.edu.itsur.pokebatalla.model.moves.RayoHielo;
 import mx.edu.itsur.pokebatalla.model.moves.Sustituto;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+
 /**
  *
  * @author Jose Guadalupe Salgado Garcia
@@ -15,7 +15,6 @@ public class Articuno extends Pokemon{
         RAYO_HIELO,
         ATAQUE_AEREO,
         SUSTITUTO
-        
     }
         
     public Articuno() {
@@ -31,9 +30,22 @@ public class Articuno extends Pokemon{
         this();
         this.nombre = nombre;
     }
+        
+    @Override
+    public Enum[] getMovimiento() {
+        return Articuno.Movimientos.values();
+    }
     
-    public void atacar(Pokemon oponente, Articuno.Movimientos movimientoAUtilizar){
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        if (this.hp <= 0) {
+            System.out.println("Articuno esta agotado y no puede realizar mas movimientos.");
+            return;
+        }
+        
+        Articuno.Movimientos movimientoAUtilizar = Articuno.Movimientos.values()[ordinalMovimiento];
         Movimiento instanciaMovimiento;
+
         switch(movimientoAUtilizar) {
             case RAYO_HIELO:
                 instanciaMovimiento = new RayoHielo();
@@ -44,13 +56,11 @@ public class Articuno extends Pokemon{
             case SUSTITUTO:
                 instanciaMovimiento = new Sustituto();
                 break;
-            
             default:
                 throw new AssertionError();
         }
+        
         instanciaMovimiento.utilizar(this, oponente);
     }
-        
-
-
+    
 }

@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
-
-import java.util.ArrayList;
 
 /**
  *
@@ -29,16 +24,26 @@ public class Bullbasaur extends Pokemon {
         precision = 4;
     }
 
-    //Constructor alterno 1
     public Bullbasaur(String nombre) {
-        this(); //invocando al constructor default
+        this();
         this.nombre = nombre;
-
     }
-     public void atacar(Pokemon oponente, Bullbasaur.Movimientos movimientoAUtilizar) {
-
-        //Instanciar el movimiento solicitado
+    
+    @Override
+    public Enum[] getMovimiento() {
+        return Bullbasaur.Movimientos.values();
+    }
+    
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        if (this.hp <= 0) {
+            System.out.println("Bullbasaur esta agotado y no puede realizar mas movimientos.");
+            return;
+        }    
+        
+        Bullbasaur.Movimientos movimientoAUtilizar = Bullbasaur.Movimientos.values()[ordinalMovimiento];
         Movimiento instanciaMovimiento;
+        
         switch (movimientoAUtilizar) {
             case ATAQUE_RAPIDO:
                 instanciaMovimiento = new AtaqueRapido();
@@ -46,13 +51,10 @@ public class Bullbasaur extends Pokemon {
             case LATIGO:
                 instanciaMovimiento = new Latigo();
                 break;
-
-            //Otros movimientos aquí...
             default:
                 throw new AssertionError();
         }
 
-        //Aplicar el movimiento
         instanciaMovimiento.utilizar(this, oponente);
 
     }

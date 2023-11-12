@@ -4,7 +4,6 @@ import mx.edu.itsur.pokebatalla.model.moves.Picotazo;
 import mx.edu.itsur.pokebatalla.model.moves.GiroFuego;
 import mx.edu.itsur.pokebatalla.model.moves.Malisioso;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
-import java.util.ArrayList;
 
 /**
  *
@@ -15,9 +14,9 @@ public class Moltres extends Pokemon{
     public enum Movimientos {
         PICOTAZO,
         GIRO_FUEGO,
-        MALISIOSO
-        
+        MALISIOSO 
     }
+    
     public Moltres () {
         tipo = "FUEGO/VOLADOR";
         hp = 90;
@@ -31,9 +30,22 @@ public class Moltres extends Pokemon{
         this();
         this.nombre = nombre;
     }
+        
+    @Override
+    public Enum[] getMovimiento() {
+        return Moltres.Movimientos.values();
+    }
     
-public void atacar(Pokemon oponente, Moltres.Movimientos movimientoAUtilizar){
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        if (this.hp <= 0) {
+            System.out.println("Moltres esta agotado y no puede realizar mas movimientos.");
+            return;
+        }  
+        
+        Moltres.Movimientos movimientoAUtilizar = Moltres.Movimientos.values()[ordinalMovimiento];
         Movimiento instanciaMovimiento;
+        
         switch(movimientoAUtilizar) {
             case PICOTAZO:
                 instanciaMovimiento = new Picotazo();
@@ -44,10 +56,10 @@ public void atacar(Pokemon oponente, Moltres.Movimientos movimientoAUtilizar){
             case MALISIOSO:
                 instanciaMovimiento = new Malisioso();
                 break;
-            
             default:
                 throw new AssertionError();
         }
         instanciaMovimiento.utilizar(this, oponente);
     }
+    
 }
