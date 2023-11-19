@@ -33,12 +33,15 @@ public abstract class Pokemon {
         this.nombre = nombre;
     }
 
+    public int getHp() {
+        return this.hp;
+    }
     
     public void recibirDanio(int danio){
         this.hp = this.hp - danio;
     } 
     
-    protected abstract void atacar(Pokemon oponente, int ordinalMovimiento);
+    public abstract void atacar(Pokemon oponente, int ordinalMovimiento);
     
     public abstract Enum[] getMovimiento();
         
@@ -47,6 +50,4 @@ public abstract class Pokemon {
         
         return this.getClass().getSimpleName() + "{tipo:" + tipo + " hp:" + hp + "}";
     }
-    
-    
 }
