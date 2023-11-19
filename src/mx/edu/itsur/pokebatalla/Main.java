@@ -1,11 +1,14 @@
 package mx.edu.itsur.pokebatalla;
 
+
 import mx.edu.itsur.pokebatalla.model.Pokemons.Bullbasaur;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Articuno;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Moltres;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Zapdos;
+import mx.edu.itsur.pokebatalla.model.battles.Batalla;
+import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
 
 /**
  *
@@ -15,7 +18,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        System.out.println("Hello PokeBatalla!");
+        System.out.println("Hello PokeBatall!");
         
         Pikachu pika = new Pikachu();
         Charmander charma = new Charmander();
@@ -24,47 +27,20 @@ public class Main {
         Moltres molt = new Moltres();
         Zapdos zapd = new Zapdos();
         
-        System.out.println("Nueva Batalla Pokemon! --------------------------------");
-        System.out.println("");
-        System.out.println("Aperecio un Charmander salvaje!");
-        System.out.println("Adelante, Pikachu!");
-        System.out.println("");
-        pika.atacar(charma, Pikachu.Movimientos.IMPACTRUENO.ordinal());
-        System.out.println("->Charmander utiliza");
-        charma.atacar(pika, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
-        System.out.println("->Bullbasaur se enoja porque atacaron a su amigo Pikachu y...");
-        bullba.atacar(charma, Bullbasaur.Movimientos.LATIGO.ordinal()); 
+        Entrenador ent1 = new Entrenador("May");
+        ent1.capturarPokemon(articu);
+        ent1.capturarPokemon(molt);
+        ent1.capturarPokemon(zapd);
         
-        System.out.println("");
-        System.out.println("Nueva Batalla Pokemon! --------------------------------");
-        System.out.println("");
-        System.out.println("Aperecio un Charmander salvaje!");
-        System.out.println("Adelante, Articuno!");
-        System.out.println("");
-        System.out.println("Articuno uso!");
-        articu.atacar(charma, Articuno.Movimientos.RAYO_HIELO.ordinal());
-        System.out.println("");
-        System.out.println("Charmander uso!");
-        charma.atacar(articu, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
-        System.out.println("");
-        System.out.println("Articuno uso!");
-        articu.atacar(charma, Articuno.Movimientos.ATAQUE_AEREO.ordinal());
-        System.out.println("");
-        System.out.println("Charmander uso!");
-        charma.atacar(articu, Charmander.Movimientos.GRUNIDO.ordinal());
-        System.out.println("");
-        System.out.println("Articuno uso!");
-        articu.atacar(charma, Articuno.Movimientos.SUSTITUTO.ordinal());
-        System.out.println("");
-        System.out.println("Charmander uso!");
-        charma.atacar(articu, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
-        System.out.println("");
-        System.out.println("Articuno uso!");
-        articu.atacar(charma, Articuno.Movimientos.RAYO_HIELO.ordinal());
-        System.out.println("");
-        charma.atacar(articu, Charmander.Movimientos.ATAQUE_RAPIDO.ordinal());
-        articu.atacar(charma, Articuno.Movimientos.RAYO_HIELO.ordinal());
-        System.out.println("");
-        System.out.println("La batalla a finalizado!");
+        Entrenador ent2 = new Entrenador("Red");
+        ent2.capturarPokemon(pika);
+        ent2.capturarPokemon(bullba);
+        ent2.capturarPokemon(charma);
+
+        Batalla b = new Batalla(ent1, ent2);
+        b.desarrollarBatalla();
+
     }
 }
+    
+
