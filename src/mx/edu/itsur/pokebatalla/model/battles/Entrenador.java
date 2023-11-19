@@ -1,5 +1,6 @@
 package mx.edu.itsur.pokebatalla.model.battles;
 
+import java.util.ArrayList;
 import java.util.List;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 
@@ -14,17 +15,24 @@ public class Entrenador {
 
     public Entrenador(String nombre) {
         this.nombre = nombre;
+        pokemonsCapturados = new ArrayList<>();
     }
     
-    public void capturarPokemon(Pokemon p){
-        pokemonsCapturados.add(p);
+    public void capturarPokemon(Pokemon pk){
+        pokemonsCapturados.add(pk);
     }
     
-    public void instruirMovimientoAlPokemonActual(Pokemon oponente, int ordianlMovimiento){
+    public void instruirMovimientoAlPokemonActual(Pokemon oponente, int ordinalMovimiento){
+        this.pokemonActual.atacar(oponente, ordinalMovimiento);
     }
     
     public boolean estaDerotado(){
-        return true;
+        int sumaHP = 0;
+        for (Pokemon pokemon : pokemonsCapturados) {
+        sumaHP += pokemon.getHp();
+        }
+        
+        return (sumaHP <= 0);
     }
     
     
@@ -41,6 +49,6 @@ public class Entrenador {
     }
 
     public List<Pokemon> getPokemonsCapturados() {
-        return pokemonsCapturados;
+        return this.pokemonsCapturados;
     }
 }
