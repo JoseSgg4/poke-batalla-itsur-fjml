@@ -30,8 +30,8 @@ public class MovimientoEstado extends Movimiento{
         
         objetivo.recibirDanio(danio); 
 
-        System.out.println(usuario.getClass().getSimpleName() + " aplica movimiento estado " + this.getClass().getSimpleName() 
-                + " a " + objetivo.getClass().getSimpleName() + " y causa danio de " + danio);
+        System.out.println(usuario.getClass().getSimpleName() + " USA MOVIMIENTO ESTADO " + this.getClass().getSimpleName() 
+                + "\n A " + objetivo.getClass().getSimpleName() + " Y CAUSA DANIO DE " + danio);
         
     }
 }

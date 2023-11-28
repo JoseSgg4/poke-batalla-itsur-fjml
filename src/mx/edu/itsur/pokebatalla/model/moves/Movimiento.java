@@ -36,4 +36,3 @@ public abstract class Movimiento implements Serializable {
     public abstract void utilizar(Pokemon usuario, Pokemon objectivo);
         
 }
-

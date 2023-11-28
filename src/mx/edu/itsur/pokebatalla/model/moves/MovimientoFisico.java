@@ -30,8 +30,8 @@ public class MovimientoFisico extends Movimiento{
         
         objetivo.recibirDanio(danio); 
 
-        System.out.println(usuario.getClass().getSimpleName() + " aplica movimiento fisico " + this.getClass().getSimpleName() 
-                + " a " + objetivo.getClass().getSimpleName() + " y causa danio de " + danio);
+        System.out.println(usuario.getClass().getSimpleName() + " USA MOVIMIENTO FISICO " + this.getClass().getSimpleName() 
+                + "\n A " + objetivo.getClass().getSimpleName() + " Y CAUSA DANIO DE " + danio);
         
     }
 }
