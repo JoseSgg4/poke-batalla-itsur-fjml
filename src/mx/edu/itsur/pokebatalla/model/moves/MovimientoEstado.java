@@ -1,4 +1,5 @@
 package mx.edu.itsur.pokebatalla.model.moves;
+
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 
 /**
@@ -9,29 +10,28 @@ public class MovimientoEstado extends Movimiento{
     
     @Override
     public void utilizar(Pokemon usuario, Pokemon objetivo){
-        System.out.println("APLICANDO MOVIMIENTO ESTADO");
         
         int nivelAtacante = usuario.getNivel();
         int ataqueAtacante = usuario.getAtaque();
         int poderMovimiento = this.potencia;
         int defensaObjetivo = objetivo.getDefensa();
+        int puntodepoder = this.puntosPoder;
         
-        double modificador = 1.0;
+        if (puntodepoder <= 0) {
+            System.out.println(usuario + "esta agotado y no puede realizar mas el movimiento.");
+            return;
+        }else if (puntodepoder >=1){
+            puntodepoder = this.puntosPoder - 1;
+        }
         
-                int danio = (int) (((
-                ((2 * nivelAtacante / 5 + 2) 
-                        * ataqueAtacante 
-                        * poderMovimiento / defensaObjetivo) 
-                  / 50) + 2) * modificador);
+        double modificador = 0;
+        
+        int danio = (int) (modificador);
         
         objetivo.recibirDanio(danio); 
 
+        System.out.println(usuario.getClass().getSimpleName() + " aplica movimiento estado " + this.getClass().getSimpleName() 
+                + " a " + objetivo.getClass().getSimpleName() + " y causa danio de " + danio);
         
-        System.out.println(
-                         usuario.getClass().getSimpleName() + " aplica " + 
-                         this.getClass().getSimpleName() + " a " +  
-                         objetivo.getClass().getSimpleName() + " y causa danio de " +
-                         danio);
-        System.out.println("El objetivo quedo asi: " + objetivo);  
     }
 }

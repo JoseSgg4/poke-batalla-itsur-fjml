@@ -1,10 +1,12 @@
 package mx.edu.itsur.pokebatalla.model.moves;
+
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 /**
  *
  * @author Jose Guadalupe Salgado Garcia
  */
-public abstract class Movimiento {
+public abstract class Movimiento implements Serializable {
 
     enum TiposDeMovimiento {
         AGUA,
@@ -25,7 +27,6 @@ public abstract class Movimiento {
         VOLADOR      
     }
 
-    
     protected TiposDeMovimiento tipo;
     protected int potencia;
     protected int precision;
@@ -34,6 +35,5 @@ public abstract class Movimiento {
     
     public abstract void utilizar(Pokemon usuario, Pokemon objectivo);
         
-    
 }
 

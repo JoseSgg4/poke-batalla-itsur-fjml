@@ -4,13 +4,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author Jose Guadalupe Salgado Garcia
  */
-public class AtaqueRapido extends MovimientoFisico{
+public class Ascuas extends MovimientoEspecial{
     
-    public AtaqueRapido() {
-        this.tipo=TiposDeMovimiento.NORMAL;
+    public Ascuas() {
+        this.tipo=TiposDeMovimiento.FUEGO;
         this.potencia = 40;
         this.precision = 100;
-        this.puntosPoder = 30;
+        this.puntosPoder = 25;
     }
-        
 }
+

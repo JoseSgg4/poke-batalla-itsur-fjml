@@ -4,13 +4,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author Jose Guadalupe Salgado Garcia
  */
-public class Impactrueno extends MovimientoEspecial{
+public class Rayo extends MovimientoEspecial{
     
-    public Impactrueno() {
+    public Rayo() {
         this.tipo = TiposDeMovimiento.ELECTRICO;
-        this.potencia = 40;
+        this.potencia = 90;
         this.precision = 100;
-        this.puntosPoder = 30;
+        this.puntosPoder = 15;
 
     } 
 }

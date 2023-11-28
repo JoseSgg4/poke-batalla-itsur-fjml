@@ -4,13 +4,13 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author Jose Guadalupe Salgado Garcia
  */
-public class AtaqueRapido extends MovimientoFisico{
+public class Cuchillada extends MovimientoFisico{
     
-    public AtaqueRapido() {
+    public Cuchillada() {
         this.tipo=TiposDeMovimiento.NORMAL;
-        this.potencia = 40;
+        this.potencia = 70;
         this.precision = 100;
-        this.puntosPoder = 30;
+        this.puntosPoder = 20;
     }
         
 }
