@@ -21,7 +21,7 @@ public class Arcanine extends Pokemon {
         
     public Arcanine() {
         this.tipo = "FUEGO            ";
-        this.hp = 384;
+        this.hp = 3848;
         this.ataque = 350;
         this.ataqueEsp = 328;
         this.defensa = 284;
